@@ -20,27 +20,199 @@
 
 <body>
   <header class="header container-xl">
-    <div class="header__container container">
-      <a class="header__logo" href="#"><span>Logo title</span></a>
-      <nav class="header__nav">
-        <ul class="header__menu list-reset">
-          <li class="menu__item">
-            <a class="menu__link link" href="#">Menu__item-1</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link link" href="#">Menu__item-2</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link link" href="#">Menu__item-3</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link link" href="#p">Menu__item-4</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link link" href="#">Menu__item-5</a>
-          </li>
-        </ul>
-      </nav>
+    <div class="header-desktop__container container">
+      <div class="header__nav-top">
+        <a class="header__logo" href="./index.html">
+          <img src="./assets/images/icon_logo.png" alt="logo">
+        </a>
+        <div class="header__contacts">
+          <div class="header__contacts-col">
+            <p class="header__contacts-title">почта</p>
+            <a class="header__contacts-link" href="mailto:kavkaz-palomnik@mail.ru"
+              target="_blank">kavkaz-palomnik@mail.ru</a>
+            <a class="header__contacts-link" href="t.me/kavkazcky_palomnik" target="_blank">t.me/kavkazcky_palomnik</a>
+          </div>
+          <div class="header__contacts-col">
+            <p class="header__contacts-title">адрес</p>
+            <a class="header__contacts-link" href="#" target="_blank">г. Пятигорск</a>
+          </div>
+          <div class="header__contacts-col">
+            <p class="header__contacts-title">телефон</p>
+            <a class="header__contacts-link" href="tel:+7(8793)33-25-33" target="_blank">+7(8793)33-25-33</a>
+            <a class="header__contacts-link" href="tel:+7(962)441-93-31" target="_blank">+7(962)441-93-31</a>
+          </div>
+        </div>
+      </div>
+      <div class="header__nav-bottom">
+        <nav class="header__nav">
+          <ul class="header__menu list-reset">
+            <li class="menu__item">
+              <a class="menu__link link" href="#">Туры</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link link" href="#">О нас</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link link" href="#">Галерея</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link link" href="#">Блог</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <form class="search__form">
+          <input type="search" placeholder="Поиск...">
+        </form>
+        <div class="socials">
+          <a class="socials__link" href="#">
+            <img src="./assets/images/icons/icon_whatsapp.svg" alt="whatsapp">
+          </a>
+          <a class="socials__link" href="#">
+            <img src="./assets/images/icons/icon_telegram.svg" alt="telegram">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="header-tablet__container container">
+      <a class="header__logo" href="./index.html">
+        <img src="./assets/images/icon_logo.png" alt="logo">
+      </a>
+      <div class="header-adaptive__menu">
+        <div class="header__nav-top">
+          <a class="header__logo" href="./index.html">
+            <img src="./assets/images/icon_logo.png" alt="logo">
+          </a>
+          <form class="search__form">
+            <input type="search" placeholder="Поиск...">
+          </form>
+          <div class="socials">
+            <a class="socials__link" href="#">
+              <img src="./assets/images/icons/icon_whatsapp.svg" alt="whatsapp">
+            </a>
+            <a class="socials__link" href="#">
+              <img src="./assets/images/icons/icon_telegram.svg" alt="telegram">
+            </a>
+          </div>
+        </div>
+        <div class="header__nav-middle">
+          <nav class="header-tablet__nav">
+            <ul class="header__menu list-reset">
+              <li class="menu__item">
+                <a class="menu__link link" href="#">Туры</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link link" href="#">О нас</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link link" href="#">Галерея</a>
+              </li>
+            </ul>
+            <ul class="header__menu list-reset">
+              <li class="menu__item">
+                <a class="menu__link link" href="#">Блог</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link link" href="#">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__nav-bottom">
+          <div class="header__contacts">
+            <div class="header__contacts-col">
+              <p class="header__contacts-title">почта</p>
+              <a class="header__contacts-link" href="mailto:kavkaz-palomnik@mail.ru"
+                target="_blank">kavkaz-palomnik@mail.ru</a>
+              <a class="header__contacts-link" href="t.me/kavkazcky_palomnik"
+                target="_blank">t.me/kavkazcky_palomnik</a>
+            </div>
+            <div class="header__contacts-col">
+              <p class="header__contacts-title">адрес</p>
+              <a class="header__contacts-link" href="#" target="_blank">г. Пятигорск, <br>
+                Бульвар Гагарина 2Б, <br> Епархиальный Дом</a>
+            </div>
+            <div class="header__contacts-col">
+              <p class="header__contacts-title">телефон</p>
+              <a class="header__contacts-link" href="tel:+7(8793)33-25-33" target="_blank">+7(8793)33-25-33</a>
+              <a class="header__contacts-link" href="tel:+7(962)441-93-31" target="_blank">+7(962)441-93-31</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="overlay"></div>
+      <div class="menu__burger">
+        <span></span>
+      </div>
+    </div>
+    <div class="header-mobile__container">
+      <a class="header__logo" href="./index.html">
+        <img src="./assets/images/icon_logo.png" alt="logo">
+      </a>
+      <div class="header-adaptive__menu">
+        <div class="header__nav-top">
+          <a class="header__logo" href="./index.html">
+            <img src="./assets/images/icon_logo.png" alt="logo">
+          </a>
+        </div>
+        <div class="header__nav-middle">
+          <nav class="header-mobile__nav">
+            <ul class="header__menu list-reset">
+              <li class="menu__item">
+                <a class="menu__link link" href="#">Туры</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link link" href="#">О нас</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link link" href="#">Галерея</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link link" href="#">Блог</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link link" href="#">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__nav-bottom">
+          <form class="search__form">
+            <input type="search" placeholder="Поиск...">
+          </form>
+          <div class="header__contacts">
+            <div class="header__contacts-col">
+              <p class="header__contacts-title">почта</p>
+              <a class="header__contacts-link" href="mailto:kavkaz-palomnik@mail.ru"
+                target="_blank">kavkaz-palomnik@mail.ru</a>
+              <a class="header__contacts-link" href="t.me/kavkazcky_palomnik"
+                target="_blank">t.me/kavkazcky_palomnik</a>
+            </div>
+            <div class="header__contacts-col">
+              <p class="header__contacts-title">адрес</p>
+              <a class="header__contacts-link" href="#" target="_blank">г. Пятигорск,
+                Бульвар Гагарина 2Б, Епархиальный Дом</a>
+            </div>
+            <div class="header__contacts-col">
+              <p class="header__contacts-title">телефон</p>
+              <a class="header__contacts-link" href="tel:+7(8793)33-25-33" target="_blank">+7(8793)33-25-33</a>
+              <a class="header__contacts-link" href="tel:+7(962)441-93-31" target="_blank">+7(962)441-93-31</a>
+            </div>
+          </div>
+          <div class="socials">
+            <p>Присоединяйтесь
+              к нашим группам</p>
+            <a class="socials__link" href="#">
+              <img src="./assets/images/icons/icon_whatsapp.svg" alt="whatsapp">
+            </a>
+            <a class="socials__link" href="#">
+              <img src="./assets/images/icons/icon_telegram.svg" alt="telegram">
+            </a>
+          </div>
+        </div>
+      </div>
       <div class="overlay"></div>
       <div class="menu__burger">
         <span></span>
@@ -48,11 +220,10 @@
     </div>
   </header>
   <main class="main">
-    <h1>MAIN CONTENT</h1>
     <!-- POPUP TEST-->
-    <a class="popup-link" href="#popup-test">TEST POPUP</a>
+    <a class="popup-link" href="#popup-test" style="display: none;">TEST POPUP</a>
     <!-- SLIDER -->
-    <div class="custom__slider swiper">
+    <div class="custom__slider swiper" style="display: none;">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img class="custom__slider-img" src="#" alt="slider img">
@@ -90,7 +261,7 @@
     </div>
     <!-- SLIDER END -->
     <!-- ACCORDEON -->
-    <div class="accordeon">
+    <div class="accordeon" style="display: none;">
       <div class="accordeon__li">
         <input id="accordeon-item-1" type="checkbox" name="accordeon">
         <label class="accordeon__btn" for="accordeon-item-1">
