@@ -2,34 +2,55 @@ console.log('kyoto430 template js running...');
 
 // Меню бургер
 function burger() {
-  const burgerBtn = document.querySelector('.menu__burger');
-  const menu = document.querySelector('.header-adaptive__menu');
+  const burgerBtns = document.querySelectorAll('.menu__burger');
+  const menus = document.querySelectorAll('.header-adaptive__menu');
   const menuLinks = document.querySelectorAll('.menu__link');
-  const overlay = document.querySelector('.overlay');
+  const overlays = document.querySelector('.overlay');
 
-  burgerBtn.addEventListener('click', function () {
-    document.body.classList.toggle('lock');
-    burgerBtn.classList.toggle('active');
-    menu.classList.toggle('active');
-    overlay.classList.toggle('active');
+  burgerBtns.forEach(function (burgerBtn) {
+    burgerBtn.addEventListener('click', function () {
+      document.body.classList.toggle('lock');
+      burgerBtn.classList.toggle('active');
+      menus.forEach(function (menu) {
+        menu.classList.toggle('active');
+      });
+      overlays.forEach(function (overlay) {
+        overlay.classList.toggle('active');
+      });
+    });
   });
 
   menuLinks.forEach(function (link) {
     link.addEventListener('click', function () {
       document.body.classList.remove('lock');
-      burgerBtn.classList.remove('active');
-      menu.classList.remove('active');
-      overlay.classList.remove('active');
+      burgerBtns.forEach(function (burgerBtn) {
+        burgerBtn.classList.remove('active');
+      });
+      menus.forEach(function (menu) {
+        menu.classList.remove('active');
+      });
+      overlays.forEach(function (overlay) {
+        overlay.classList.remove('active');
+      });
     });
   });
 
   document.addEventListener('click', function (event) {
-    if (!menu.contains(event.target) && !burgerBtn.contains(event.target)) {
-      document.body.classList.remove('lock');
-      burgerBtn.classList.remove('active');
-      menu.classList.remove('active');
-      overlay.classList.remove('active');
-    }
+    menus.forEach(function (menu) {
+      burgerBtns.forEach(function (burgerBtn) {
+        overlays.forEach(function (overlay) {
+          if (
+            !menu.contains(event.target) &&
+            !burgerBtn.contains(event.target)
+          ) {
+            document.body.classList.remove('lock');
+            burgerBtn.classList.remove('active');
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+          }
+        });
+      });
+    });
   });
 }
 
