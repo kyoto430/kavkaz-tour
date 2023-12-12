@@ -5,7 +5,7 @@ function burger() {
   const burgerBtns = document.querySelectorAll('.menu__burger');
   const menus = document.querySelectorAll('.header-adaptive__menu');
   const menuLinks = document.querySelectorAll('.menu__link');
-  const overlays = document.querySelector('.overlay');
+  const overlays = document.querySelectorAll('.overlay');
 
   burgerBtns.forEach(function (burgerBtn) {
     burgerBtn.addEventListener('click', function () {
@@ -31,24 +31,6 @@ function burger() {
       });
       overlays.forEach(function (overlay) {
         overlay.classList.remove('active');
-      });
-    });
-  });
-
-  document.addEventListener('click', function (event) {
-    menus.forEach(function (menu) {
-      burgerBtns.forEach(function (burgerBtn) {
-        overlays.forEach(function (overlay) {
-          if (
-            !menu.contains(event.target) &&
-            !burgerBtn.contains(event.target)
-          ) {
-            document.body.classList.remove('lock');
-            burgerBtn.classList.remove('active');
-            menu.classList.remove('active');
-            overlay.classList.remove('active');
-          }
-        });
       });
     });
   });
@@ -155,3 +137,28 @@ function popups() {
 }
 
 popups();
+
+function showMoreText() {
+  document.addEventListener('DOMContentLoaded', function () {
+    const showMoreButtons = document.querySelectorAll('.btn-show');
+    const hiddenText = document.querySelectorAll('.text-hidden');
+
+    showMoreButtons.forEach(function (showMoreButton) {
+      showMoreButton.addEventListener('click', function () {
+        hiddenText.forEach(function (text) {
+          if (text.style.transform !== 'scale(1)') {
+            text.style.position = 'initial';
+            text.style.transform = 'scale(1)';
+            showMoreButton.innerText = 'Скрыть весь текст';
+          } else {
+            text.style.position = 'absolute';
+            text.style.transform = 'scale(0)';
+            showMoreButton.innerText = 'Показать весь текст';
+          }
+        });
+      });
+    });
+  });
+}
+
+showMoreText();
