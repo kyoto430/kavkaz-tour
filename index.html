@@ -222,46 +222,402 @@
     </div>
   </header>
   <main class="main">
-    <!-- POPUP TEST-->
-    <a class="popup-link" href="#popup-test" style="display: none;">TEST POPUP</a>
-    <!-- SLIDER -->
-    <div class="custom__slider swiper" style="display: none;">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img class="custom__slider-img" src="#" alt="slider img">
-          <div class="custom__slider-wrapper">
-            <div class="custom__wrapper-title">
-              <p class="custom__silider-title">TITLE</p>
-              <p class="custom__silder-subtitle">SUBTITLE</p>
+    <section class="preview">
+      <div class="slider__wrapper">
+        <!-- SLIDER -->
+        <div class="preview__slider swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="preview__slide">
+                <picture class="preview__img">
+                  <source media="(max-width: 425px)" srcset="./assets/images/mobile/slider/img_main.jpg">
+                  <source media="(max-width: 768px)" srcset="./assets/images/tablet/slider/img_main.jpg">
+                  <img src="./assets/images/desktop/slider/img_main.jpg" loading="lazy" alt="lorem">
+                </picture>
+                <div class="preview__inner">
+                  <h1 class="preview__title">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit.</h1>
+                  <a class="btn__link btn-main" href="#">перейти к туру</a>
+                </div>
+              </div>
             </div>
-            <div class="custom__slider-text">
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore aperiam, delectus explicabo non
-                soluta qui nihil accusamus esse sint ipsum ipsa recusandae hic voluptates rem, est, cumque magni
-                laudantium pariatur.</p>
+            <div class="swiper-slide">
+              <div class="preview__slide">
+                <picture class="preview__img">
+                  <source media="(max-width: 425px)" srcset="./assets/images/mobile/slider/img_main.jpg">
+                  <source media="(max-width: 768px)" srcset="./assets/images/tablet/slider/img_main.jpg">
+                  <img src="./assets/images/desktop/slider/img_main.jpg" loading="lazy" alt="lorem">
+                </picture>
+                <div class="preview__inner">
+                  <h1 class="preview__title">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit.</h1>
+                  <a class="btn__link btn-main" href="#">перейти к туру</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="preview__slide">
+                <picture class="preview__img">
+                  <source media="(max-width: 425px)" srcset="./assets/images/mobile/slider/img_main.jpg">
+                  <source media="(max-width: 768px)" srcset="./assets/images/tablet/slider/img_main.jpg">
+                  <img src="./assets/images/desktop/slider/img_main.jpg" loading="lazy" alt="lorem">
+                </picture>
+                <div class="preview__inner">
+                  <h1 class="preview__title">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit.</h1>
+                  <a class="btn__link btn-main" href="#">перейти к туру</a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="swiper-slide">
-          <img class="custom__slider-img" src="#" alt="slider img">
-          <div class="custom__slider-wrapper">
-            <div class="custom__wrapper-title">
-              <p class="custom__silider-title">TITLE</p>
-              <p class="custom__silder-subtitle">SUBTITLE</p>
-            </div>
-            <div class="custom__slider-text">
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore aperiam, delectus explicabo non
-                soluta qui nihil accusamus esse sint ipsum ipsa recusandae hic voluptates rem, est, cumque magni
-                laudantium pariatur.</p>
-            </div>
+          <div class="preview__slider-nav">
+            <div class="swiper-button-prev preview-slider__btn-prev"></div>
+            <div class="swiper-pagination preview-slider__pagination"></div>
+            <div class="swiper-button-next preview-slider__btn-next"></div>
           </div>
         </div>
+        <!-- SLIDER END -->
       </div>
-      <div class="custom__slider-nav">
-        <div class="slider__btn-prev"></div>
-        <div class="slider__btn-next"></div>
+    </section>
+    <div class="services">
+      <div class="container">
+        <div class="services__cards">
+          <div class="services__card">
+            <div class="services__card-inner">
+              <img class="services__card-img" src="./assets/images/icons/icon_expert.svg" alt="icon_expert">
+              <div class="services__card-desc">
+                <h5 class="services__card-title">Экспертность</h5>
+                <p class="services__card-text">Занимаемся паломничеством
+                  с 2008 года</p>
+              </div>
+            </div>
+          </div>
+          <div class="services__card">
+            <div class="services__card-inner">
+              <img class="services__card-img" src="./assets/images/icons/icon_service.svg" alt="icon_service">
+              <div class="services__card-desc">
+                <h5 class="services__card-title">Высокий сервис</h5>
+                <p class="services__card-text">Поддержка клиентов на протяжении
+                  всей поездки 24/7</p>
+              </div>
+            </div>
+          </div>
+          <div class="services__card">
+            <div class="services__card-inner">
+              <img class="services__card-img" src="./assets/images/icons/icon_price.svg" alt="icon_price">
+              <div class="services__card-desc">
+                <h5 class="services__card-title">Цены</h5>
+                <p class="services__card-text">В большинстве случаев ниже, чем
+                  на ресурсах онлайн-бронирования</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- SLIDER END -->
+    <section class="tours">
+      <div class="tours__container">
+        <picture class="tours__bg">
+          <source media="(max-width: 425px)" srcset="./assets/images/mobile/russia_tour/img_bg_russia_tours.jpg">
+          <source media="(max-width: 768px)" srcset="./assets/images/tablet/russia_tour/img_bg_russia_tours.jpg">
+          <img src="./assets/images/desktop/russia_tour/img_bg_russia_tours.jpg" loading="lazy" alt="lorem">
+        </picture>
+        <div class="tours__wrapper">
+          <div class="tours__inner">
+            <h2 class="tours__title">Туры по России</h2>
+            <div class="tours__cards">
+              <div class="tours__card">
+                <img src="./assets/images/desktop/russia_tour/img_01.jpg" alt="01">
+                <div class="tours__card-inner">
+                  <div class="tours__card-top">
+                    <span class="tours__card-location">Россия</span>
+                    <span class="tours__card-date">4 ноября</span>
+                  </div>
+                  <div class="tours__card-middle">
+                    <span class="tours__card-name">Енисей</span>
+                  </div>
+                  <div class="tours__card-bottom">
+                    <span class="tours__card-price">55.555 &#8381;</span>
+                    <a class="tours__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+              <div class="tours__card">
+                <img src="./assets/images/desktop/russia_tour/img_02.jpg" alt="02">
+                <div class="tours__card-inner">
+                  <div class="tours__card-top">
+                    <span class="tours__card-location">Россия</span>
+                    <span class="tours__card-date">4 ноября</span>
+                  </div>
+                  <div class="tours__card-middle">
+                    <span class="tours__card-name">Ярославль-Толгский монастырь
+                      и Древний Тутаев</span>
+                  </div>
+                  <div class="tours__card-bottom">
+                    <span class="tours__card-price">55.555 &#8381;</span>
+                    <a class="tours__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+              <div class="tours__card">
+                <img src="./assets/images/desktop/russia_tour/img_03.jpg" alt="03">
+                <div class="tours__card-inner">
+                  <div class="tours__card-top">
+                    <span class="tours__card-location">Россия</span>
+                    <span class="tours__card-date">4 ноября</span>
+                  </div>
+                  <div class="tours__card-middle">
+                    <span class="tours__card-name">Байкал</span>
+                  </div>
+                  <div class="tours__card-bottom">
+                    <span class="tours__card-price">55.555 &#8381;</span>
+                    <a class="tours__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+              <div class="tours__card card-hidden">
+                <img src="./assets/images/desktop/russia_tour/img_03.jpg" alt="03">
+                <div class="tours__card-inner">
+                  <div class="tours__card-top">
+                    <span class="tours__card-location">Россия</span>
+                    <span class="tours__card-date">4 ноября</span>
+                  </div>
+                  <div class="tours__card-middle">
+                    <span class="tours__card-name">Байкал</span>
+                  </div>
+                  <div class="tours__card-bottom">
+                    <span class="tours__card-price">55.555 &#8381;</span>
+                    <a class="tours__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="tours__link" href="#">Перейти ко всем турам</a>
+        </div>
+      </div>
+    </section>
+    <section class="tours">
+      <div class="tours__container">
+        <picture class="tours__bg">
+          <source media="(max-width: 425px)" srcset="./assets/images/mobile/kavkaz_tour/img_bg_kavkas_tours.jpg">
+          <source media="(max-width: 768px)" srcset="./assets/images/tablet/kavkaz_tour/img_bg_kavkas_tours.jpg">
+          <img src="./assets/images/desktop/kavkaz_tour/img_bg_kavkas_tours.jpg" loading="lazy" alt="lorem">
+        </picture>
+        <div class="tours__wrapper">
+          <div class="tours__inner">
+            <h2 class="tours__title">Туры по Кавказу</h2>
+            <div class="tours__cards">
+              <div class="tours__card">
+                <img src="./assets/images/desktop/kavkaz_tour/img_01.jpg" alt="01">
+                <div class="tours__card-inner">
+                  <div class="tours__card-top">
+                    <span class="tours__card-location">Кавказ</span>
+                    <span class="tours__card-date">4 ноября</span>
+                  </div>
+                  <div class="tours__card-middle">
+                    <span class="tours__card-name">Кавказ Христианский</span>
+                  </div>
+                  <div class="tours__card-bottom">
+                    <span class="tours__card-price">55.555 &#8381;</span>
+                    <a class="tours__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+              <div class="tours__card">
+                <img src="./assets/images/desktop/kavkaz_tour/img_02.jpg" alt="02">
+                <div class="tours__card-inner">
+                  <div class="tours__card-top">
+                    <span class="tours__card-location">Кавказ</span>
+                    <span class="tours__card-date">4 ноября</span>
+                  </div>
+                  <div class="tours__card-middle">
+                    <span class="tours__card-name">Кавказ - территория Неба
+                    </span>
+                  </div>
+                  <div class="tours__card-bottom">
+                    <span class="tours__card-price">55.555 &#8381;</span>
+                    <a class="tours__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+              <div class="tours__card">
+                <img src="./assets/images/desktop/kavkaz_tour/img_03.jpg" alt="03">
+                <div class="tours__card-inner">
+                  <div class="tours__card-top">
+                    <span class="tours__card-location">Кавказ</span>
+                    <span class="tours__card-date">4 ноября</span>
+                  </div>
+                  <div class="tours__card-middle">
+                    <span class="tours__card-name">Рождество Христово на Кавказе
+                    </span>
+                  </div>
+                  <div class="tours__card-bottom">
+                    <span class="tours__card-price">55.555 &#8381;</span>
+                    <a class="tours__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+              <div class="tours__card card-hidden">
+                <img src="./assets/images/desktop/kavkaz_tour/img_03.jpg" alt="03">
+                <div class="tours__card-inner">
+                  <div class="tours__card-top">
+                    <span class="tours__card-location">Кавказ</span>
+                    <span class="tours__card-date">4 ноября</span>
+                  </div>
+                  <div class="tours__card-middle">
+                    <span class="tours__card-name">Рождество Христово на Кавказе
+                    </span>
+                  </div>
+                  <div class="tours__card-bottom">
+                    <span class="tours__card-price">55.555 &#8381;</span>
+                    <a class="tours__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="tours__link" href="#">Перейти ко всем турам</a>
+        </div>
+      </div>
+    </section>
+    <section class="tours">
+      <div class="tours__container">
+        <picture class="tours__bg">
+          <source media="(max-width: 425px)" srcset="./assets/images/mobile/abroad_tours/img_bg_abroad_tours.jpg">
+          <source media="(max-width: 768px)" srcset="./assets/images/tablet/abroad_tours/img_bg_abroad_tours.jpg">
+          <img src="./assets/images/desktop/abroad_tours/img_bg_abroad_tours.jpg" loading="lazy" alt="lorem">
+        </picture>
+        <div class="tours__wrapper">
+          <div class="tours__inner">
+            <h2 class="tours__title">Туры по зарубежью</h2>
+            <div class="tours__cards">
+              <div class="tours__card">
+                <img src="./assets/images/desktop/abroad_tours/img_01.jpg" alt="01">
+                <div class="tours__card-inner">
+                  <div class="tours__card-top">
+                    <span class="tours__card-location">Азербайджан</span>
+                    <span class="tours__card-date">4 ноября</span>
+                  </div>
+                  <div class="tours__card-middle">
+                    <span class="tours__card-name">Христианские Святыни
+                      Азербайджана</span>
+                  </div>
+                  <div class="tours__card-bottom">
+                    <span class="tours__card-price">55.555 &#8381;</span>
+                    <a class="tours__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+              <div class="tours__card">
+                <img src="./assets/images/desktop/abroad_tours/img_02.jpg" alt="02">
+                <div class="tours__card-inner">
+                  <div class="tours__card-top">
+                    <span class="tours__card-location">Дагестан</span>
+                    <span class="tours__card-date">4 ноября</span>
+                  </div>
+                  <div class="tours__card-middle">
+                    <span class="tours__card-name">Lorem ipsum dolor sit amet,
+                      consectetur adipiscing elit
+                    </span>
+                  </div>
+                  <div class="tours__card-bottom">
+                    <span class="tours__card-price">55.555 &#8381;</span>
+                    <a class="tours__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+              <div class="tours__card">
+                <img src="./assets/images/desktop/abroad_tours/img_03.jpg" alt="03">
+                <div class="tours__card-inner">
+                  <div class="tours__card-top">
+                    <span class="tours__card-location">Египет</span>
+                    <span class="tours__card-date">4 ноября</span>
+                  </div>
+                  <div class="tours__card-middle">
+                    <span class="tours__card-name">Lorem ipsum dolor sit amet,
+                      consectetur adipiscing elit.
+                    </span>
+                  </div>
+                  <div class="tours__card-bottom">
+                    <span class="tours__card-price">55.555 &#8381;</span>
+                    <a class="tours__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+              <div class="tours__card card-hidden">
+                <img src="./assets/images/desktop/abroad_tours/img_03.jpg" alt="03">
+                <div class="tours__card-inner">
+                  <div class="tours__card-top">
+                    <span class="tours__card-location">Египет</span>
+                    <span class="tours__card-date">4 ноября</span>
+                  </div>
+                  <div class="tours__card-middle">
+                    <span class="tours__card-name">Lorem ipsum dolor sit amet,
+                      consectetur adipiscing elit.
+                    </span>
+                  </div>
+                  <div class="tours__card-bottom">
+                    <span class="tours__card-price">55.555 &#8381;</span>
+                    <a class="tours__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="tours__link" href="#">Перейти ко всем турам</a>
+        </div>
+      </div>
+    </section>
+    <section class="about">
+      <div class="container">
+        <div class="about__wrapper">
+          <div class="about__img">
+            <img src="#" alt="about img">
+          </div>
+          <div class="about__inner">
+            <div class="about__inner-text">
+              <h4 class="about__title">О нас</h4>
+              <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sodales augue quis
+                nisl tristique, ut pulvinar leo mollis. Curabitur et eros quis orci tristique placerat. Praesent
+                tristique odio quis malesuada luctus. Donec a congue ante. Maecenas dictum libero id nunc vestibulum
+                cursus. Morbi ullamcorper id lorem quis faucibus. Nunc congue nunc eget odio pellentesque, in luctus leo
+                luctus. Nam maximus, est et mollis suscipit, justo lorem lobortis eros, eu varius leo dui at libero. Nam
+                cursus purus in nisl eleifend vulputate. Suspendisse vel odio varius, ornare ipsum vitae, efficitur
+                felis. Nulla eu orci in lacus sodales pretium nec quis nulla. Nulla et ligula bibendum, consequat lectus
+                vitae, maximus ante. Vestibulum id libero vitae sapien lobortis faucibus sit amet in tellus. Fusce ac
+                velit velit. Ut eget arcu a urna iaculis convallis eget ut dui. Etiam ut mollis libero, in vestibulum
+                elit.</p>
+            </div>
+            <a class="tours__link" href="#">Подробнее</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="feedback">
+      <div class="feedback__wrapper">
+        <div class="feedback__desc">
+          <h2 class="feedback__title">Остались вопросы? Напишите нам!</h2>
+          <a class="btn__link btn-main" href="#">Оставить заявку</a>
+        </div>
+        <div class="feedback__contacts">
+          <address class="feedback__address">
+            <span class="feedback__contacts-title">адрес</span>
+            <p>Пятигорск, Бульвар Гагарина 2Б, Епархиальный Дом</p>
+          </address>
+          <div class="feedback__phones">
+            <span class="feedback__contacts-title">телефон</span>
+            <a href="tel:+7(905)413-98-04">+7(905)413-98-04</a>
+            <a href="tel:+7(962)441-93-31">+7(962)441-93-31</a>
+          </div>
+        </div>
+      </div>
+      <picture class="feedback__bg">
+        <source media="(max-width: 425px)" srcset="./assets/images/mobile/feedback/img_form_bg.jpg">
+        <source media="(max-width: 768px)" srcset="./assets/images/tablet/feedback/img_form_bg.jpg">
+        <img src="./assets/images/desktop/feedback/img_form_bg.jpg" loading="lazy" alt="lorem">
+      </picture>
+    </section>
+    <!-- POPUP TEST-->
+    <a class="popup-link" href="#popup-test" style="display: none;">TEST POPUP</a>
+
     <!-- ACCORDEON -->
     <div class="accordeon" style="display: none;">
       <div class="accordeon__li">
