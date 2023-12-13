@@ -162,3 +162,49 @@ function showMoreText() {
 }
 
 showMoreText();
+
+function showMoreCards() {
+  document.addEventListener('DOMContentLoaded', function () {
+    const showMoreButtons = document.querySelectorAll('.btn-show__cards');
+    const hiddenCards = document.querySelectorAll('.card-hidden');
+
+    showMoreButtons.forEach(function (showMoreButton) {
+      showMoreButton.addEventListener('click', function () {
+        hiddenCards.forEach(function (card) {
+          if (card.style.transform !== 'scale(1)') {
+            card.style.position = 'initial';
+            card.style.transform = 'scale(1)';
+            showMoreButton.innerText = 'Скрыть';
+          } else {
+            card.style.position = 'absolute';
+            card.style.transform = 'scale(0)';
+            showMoreButton.innerText = 'Показать больше';
+          }
+        });
+      });
+    });
+  });
+}
+
+showMoreCards();
+
+function hideBlocks() {
+  const tourCards = document.querySelectorAll('.tours-page .tours__card');
+  if (window.innerWidth > 1180) {
+    for (let i = 9; i < tourCards.length; i += 1) {
+      tourCards[i].classList.add('card-hidden');
+    }
+  } else {
+    if (window.innerWidth <= 874 && window.innerWidth > 590) {
+      for (let i = 6; i < tourCards.length; i += 1) {
+        tourCards[i].classList.add('card-hidden');
+      }
+    } else {
+      for (let i = 4; i < tourCards.length; i += 1) {
+        tourCards[i].classList.add('card-hidden');
+      }
+    }
+  }
+}
+
+hideBlocks();
