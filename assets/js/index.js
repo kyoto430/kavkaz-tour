@@ -188,14 +188,55 @@ function showMoreCards() {
 
 showMoreCards();
 
+function showMoreProgramm() {
+  document.addEventListener('DOMContentLoaded', function () {
+    const showMoreButtons = document.querySelectorAll('.btn-show__programm');
+    const firstProgramm = document.querySelector(
+      '.programm__list .programm__list-item'
+    );
+    const firstElement = firstProgramm.querySelector('.btn-show__programm');
+
+    showMoreButtons.forEach(function (showMoreButton) {
+      firstElement.click();
+      let menu = showMoreButton.previousElementSibling;
+      showMoreButton.addEventListener('click', function () {
+        if (menu.style.transform !== 'scale(1)') {
+          menu.style.position = 'initial';
+          menu.style.transform = 'scale(1)';
+          if (window.innerWidth >= 425) {
+            menu.parentElement.style.paddingTop = '40px';
+            menu.parentElement.style.paddingBottom = '40px';
+          } else {
+            menu.parentElement.style.paddingTop = '24px';
+            menu.parentElement.style.paddingBottom = '24px';
+          }
+          showMoreButton.innerText = 'Скрыть';
+        } else {
+          menu.style.position = 'absolute';
+          menu.style.transform = 'scale(0)';
+          menu.parentElement.style.paddingTop = '20px';
+          menu.parentElement.style.paddingBottom = '20px';
+          showMoreButton.innerText = 'Раскрыть';
+        }
+      });
+    });
+  });
+}
+
+showMoreProgramm();
+
 function hideBlocks() {
   const tourCards = document.querySelectorAll('.tours-page .tours__card');
-  if (window.innerWidth > 1180) {
+  const programmCards = document.querySelectorAll('.programm__sublist');
+  programmCards.forEach(function (programmCard) {
+    programmCard.classList.add('programm-hidden');
+  });
+  if (window.innerWidth >= 1024 && window.innerWidth <= 2560) {
     for (let i = 9; i < tourCards.length; i += 1) {
       tourCards[i].classList.add('card-hidden');
     }
   } else {
-    if (window.innerWidth <= 874 && window.innerWidth > 590) {
+    if (window.innerWidth <= 1023 && window.innerWidth > 590) {
       for (let i = 6; i < tourCards.length; i += 1) {
         tourCards[i].classList.add('card-hidden');
       }
