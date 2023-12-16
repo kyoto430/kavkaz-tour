@@ -189,7 +189,7 @@ showMoreText();
 // hideBlocks();
 
 document.addEventListener('DOMContentLoaded', function () {
-  const content = document.querySelector('.tours__wrapper');
+  const content = document.querySelector('.tours__wrapper-pagination');
   let itemsPerPage = 0; // set number of items per page
 
   if (window.innerWidth >= 1024 && window.innerWidth <= 2560) {
