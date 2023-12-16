@@ -403,6 +403,41 @@ h6 {
 
 /* -------- END -------- */
 
+/* PAGINATION */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-top: -20px;
+}
+
+.pagination button {
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: var(--body-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px; /* 150% */
+  background: none;
+  cursor: pointer;
+  border: none;
+}
+
+.hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.pagination button.active {
+  color: var(--color-orange);
+}
+
 /* POPUP */
 
 .popup {
@@ -576,25 +611,74 @@ h6 {
   box-shadow: 0 0 0 1px #3c5443;
 }
 
-.popup__check {
-  display: flex;
-  align-items: flex-start;
+.popup__container-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 24px;
   margin-top: 12px;
-  text-align: left;
-}
-
-.popup__check input {
-  margin-top: 2px;
-}
-
-.popup__check span {
-  max-width: 378px;
-  margin-left: 12px;
+  cursor: pointer;
   font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-  opacity: 0.3;
+  text-align: left;
+  color: rgba(65, 65, 65, 0.3);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.popup__container-checkbox input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 12px;
+  width: 12px;
+  border-radius: 3px;
+  border: 1px solid rgba(30, 40, 57, 0.1);
+  transition: all 0.3s ease;
+}
+
+#popup-order .popup__container-checkbox:hover input ~ .checkmark {
+  background-color: var(--color-orange-dark);
+}
+
+#popup-question .popup__container-checkbox:hover input ~ .checkmark {
+  background-color: var(--color-green-dark);
+}
+
+#popup-order .popup__container-checkbox input:checked ~ .checkmark {
+  background-color: var(--color-orange) !important;
+}
+
+#popup-question .popup__container-checkbox input:checked ~ .checkmark {
+  background-color: var(--color-green) !important;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.popup__container-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.popup__container-checkbox .checkmark:after {
+  left: 3px;
+  top: 1px;
+  width: 2px;
+  height: 5px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 @media (max-width: 768px) {
@@ -634,6 +718,14 @@ h6 {
 
   .popup__icon {
     margin-top: 24px;
+  }
+
+  #popup-order .popup__container-checkbox:hover input ~ .checkmark {
+    background-color: inherit;
+  }
+
+  #popup-question .popup__container-checkbox:hover input ~ .checkmark {
+    background-color: inherit;
   }
 }
 
@@ -2507,6 +2599,10 @@ input[type='search']:focus {
   }
 
   .btn-second {
+    max-width: 230px;
+    width: 100%;
+    height: 59px;
+    padding: 0px;
     font-size: 12px;
     line-height: 18px;
     letter-spacing: 0.36px;
@@ -2531,7 +2627,27 @@ input[type='search']:focus {
 
 /* TOUR-PREVIEW */
 
-.tour-preview__wrapper {
+.tour-page__slider {
+  max-width: 1280px;
+  height: 364px;
+  margin-top: 28px;
+}
+
+.tour-page__slider .swiper-wrapper .swiper-slide {
+  display: flex;
+  width: max-content !important;
+  cursor: pointer;
+}
+
+.tour-page__img {
+  display: flex;
+}
+
+.tour-page__imgs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .tour-preview__description {
@@ -2588,9 +2704,45 @@ input[type='search']:focus {
     flex-direction: column;
     gap: 20px;
   }
+
+  .tour-page__slider {
+    height: 416px;
+  }
+
+  .tour-page__slider .preview__slider-nav {
+    max-width: 100%;
+  }
+
+  .tour-page__slide {
+    margin: 0 auto;
+  }
+
+  .tour-page__slider .swiper-wrapper {
+    max-width: 664px;
+  }
+
+  .tour-page__slider .preview-slider__btn-next {
+    right: 0 !important;
+  }
+
+  .tour-page__slider .preview-slider__btn-prev {
+    left: 0 !important;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 425px) {
+  .tour-page__slider {
+    margin-top: 24px;
+  }
+
+  .tour-page__slider .swiper-wrapper .swiper-slide {
+    width: inherit !important;
+  }
+
+  .tour-page__img {
+    height: 364px;
+  }
+
   .tour-preview__title-wrapper {
     gap: 12px;
   }

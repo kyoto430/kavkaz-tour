@@ -12,6 +12,8 @@
   <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
   <link rel="stylesheet" href="./assets/css/styles.css">
   <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+  <script src="./assets/js/tourPage.js" defer></script>
   <script src="./assets/js/index.js" defer></script>
   <script src="./assets/js/swiper-bundle.min.js" defer></script>
   <script src="./assets/js/slider.js" defer></script>
@@ -254,6 +256,47 @@
               risus.
             </p>
           </div>
+        </div>
+        <div class="slider__wrapper">
+          <!-- SLIDER -->
+          <div class="tour-page__slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="tour-page__slide">
+                  <div class="tour-page__img">
+                    <img src="./assets/images/desktop/abroad_tours/azerbajan/img_01.jpg" data-fancybox="gallery"
+                      loading="lazy" alt="lorem">
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="tour-page__slide">
+                  <div class="tour-page__imgs">
+                    <img src="./assets/images/desktop/abroad_tours/azerbajan/img_02.jpg" data-fancybox="gallery"
+                      loading="lazy" alt="lorem">
+                    <img src="./assets/images/desktop/abroad_tours/azerbajan/img_03.jpg" data-fancybox="gallery"
+                      loading="lazy" alt="lorem">
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="tour-page__slide">
+                  <div class="tour-page__imgs">
+                    <img src="./assets/images/desktop/abroad_tours/azerbajan/img_04.jpg" data-fancybox="gallery"
+                      loading="lazy" alt="lorem">
+                    <img src="./assets/images/desktop/abroad_tours/azerbajan/img_05.jpg" data-fancybox="gallery"
+                      loading="lazy" alt="lorem">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="preview__slider-nav">
+              <div class="swiper-button-prev preview-slider__btn-prev"></div>
+              <div class="swiper-pagination preview-slider__pagination"></div>
+              <div class="swiper-button-next preview-slider__btn-next"></div>
+            </div>
+          </div>
+          <!-- SLIDER END -->
         </div>
       </div>
     </section>
@@ -537,10 +580,11 @@
               <input type="text" name="message" id="message" placeholder="Введите ваш вопрос">
             </div>
             <a class="popup__btn popup-link" href="#popup-correct">забронировать место</a>
-            <label class="popup__check">
-              <input type="checkbox" name="check" id="check" checked>
-              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pulvinar finibus velit eu
-                auctor. Nulla vitae dictum nisl. </span>
+            <label class="popup__container-checkbox">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pulvinar finibus velit eu
+              auctor. Nulla vitae dictum nisl.
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
             </label>
           </form>
         </div>
@@ -578,6 +622,7 @@
     </div>
   </div>
   <!-- POPUPS END-->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 </body>
 
 </html>
