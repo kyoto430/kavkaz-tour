@@ -163,112 +163,125 @@ function showMoreText() {
 
 showMoreText();
 
-// function hideBlocks() {
-//   const tourCards = document.querySelectorAll('.tours-page .tours__card');
-//   const programmCards = document.querySelectorAll('.programm__sublist');
-//   programmCards.forEach(function (programmCard) {
-//     programmCard.classList.add('programm-hidden');
-//   });
-//   if (window.innerWidth >= 1024 && window.innerWidth <= 2560) {
-//     for (let i = 9; i < tourCards.length; i += 1) {
-//       tourCards[i].classList.add('card-hidden');
-//     }
-//   } else {
-//     if (window.innerWidth <= 1023 && window.innerWidth > 590) {
-//       for (let i = 6; i < tourCards.length; i += 1) {
-//         tourCards[i].classList.add('card-hidden');
-//       }
-//     } else {
-//       for (let i = 4; i < tourCards.length; i += 1) {
-//         tourCards[i].classList.add('card-hidden');
-//       }
-//     }
-//   }
-// }
+function hideBlocks() {
+  const programmCards = document.querySelectorAll('.programm__sublist');
+  programmCards.forEach(function (programmCard) {
+    programmCard.classList.add('programm-hidden');
+  });
+}
 
-// hideBlocks();
+hideBlocks();
 
 document.addEventListener('DOMContentLoaded', function () {
-  const content = document.querySelector('.tours__wrapper-pagination');
-  let itemsPerPage = 0; // set number of items per page
+  if (document.querySelector('.tours__wrapper-pagination')) {
+    const content = document.querySelector('.tours__wrapper-pagination');
+    let itemsPerPage = 0; // set number of items per page
 
-  if (window.innerWidth >= 1024 && window.innerWidth <= 2560) {
-    itemsPerPage = 9;
-  } else {
-    if (window.innerWidth <= 1023 && window.innerWidth > 590) {
-      itemsPerPage = 6;
+    if (window.innerWidth >= 1024 && window.innerWidth <= 2560) {
+      itemsPerPage = 9;
     } else {
-      itemsPerPage = 4;
-    }
-  }
-
-  let currentPage = 0;
-  const items = Array.from(content.querySelectorAll('.tours__card')).slice(0);
-
-  function showPage(page) {
-    const startIndex = page * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    items.forEach((item, index) => {
-      item.classList.toggle('hidden', index < startIndex || index >= endIndex);
-    });
-    updateActiveButtonStates();
-  }
-
-  function createPageButtons() {
-    const totalPages = Math.ceil(items.length / itemsPerPage);
-    const paginationContainer = document.createElement('div');
-    const paginationDiv = document.body.appendChild(paginationContainer);
-    paginationContainer.classList.add('pagination');
-
-    // Add page buttons
-    for (let i = 0; i < totalPages; i++) {
-      const pageButton = document.createElement('button');
-      pageButton.textContent = i + 1;
-      pageButton.addEventListener('click', () => {
-        currentPage = i;
-        showPage(currentPage);
-        updateActiveButtonStates();
-      });
-
-      content.appendChild(paginationContainer);
-      paginationDiv.appendChild(pageButton);
-    }
-  }
-
-  function updateActiveButtonStates() {
-    const pageButtons = document.querySelectorAll('.pagination button');
-    pageButtons.forEach((button, index) => {
-      if (index === currentPage) {
-        button.classList.add('active');
+      if (window.innerWidth <= 1023 && window.innerWidth > 590) {
+        itemsPerPage = 6;
       } else {
-        button.classList.remove('active');
+        itemsPerPage = 4;
       }
-    });
+    }
+
+    let currentPage = 0;
+
+    const items = Array.from(content.querySelectorAll('.tours__card')).slice(0);
+
+    function showPage(page) {
+      const startIndex = page * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      items.forEach((item, index) => {
+        item.classList.toggle(
+          'hidden',
+          index < startIndex || index >= endIndex
+        );
+      });
+      updateActiveButtonStates();
+    }
+
+    function createPageButtons() {
+      const totalPages = Math.ceil(items.length / itemsPerPage);
+      const paginationContainer = document.createElement('div');
+      const paginationDiv = document.body.appendChild(paginationContainer);
+      paginationContainer.classList.add('pagination');
+
+      // Add page buttons
+      for (let i = 0; i < totalPages; i++) {
+        const pageButton = document.createElement('button');
+        pageButton.textContent = i + 1;
+        pageButton.addEventListener('click', () => {
+          currentPage = i;
+          showPage(currentPage);
+          updateActiveButtonStates();
+        });
+
+        content.appendChild(paginationContainer);
+        paginationDiv.appendChild(pageButton);
+      }
+    }
+
+    function updateActiveButtonStates() {
+      const pageButtons = document.querySelectorAll('.pagination button');
+      pageButtons.forEach((button, index) => {
+        if (index === currentPage) {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
+        }
+      });
+    }
+
+    createPageButtons();
+    showPage(currentPage);
+    showMoreCards();
   }
-
-  // function showMoreCards() {
-  //   const showMoreButton = document.querySelector('.btn-show__cards');
-  //   const hiddenCards = document.querySelectorAll('.hidden');
-  //   console.log('hidden cards NEW', hiddenCards);
-  //   console.log('smb', showMoreButton);
-  //   const pagination = document.querySelector('.pagination');
-
-  //   showMoreButton.addEventListener('click', function () {
-  //     console.log('click Показать больше');
-  //     hiddenCards.forEach(function (card) {
-  //       if (card.classList.contains('hidden')) {
-  //         card.classList.toggle('hidden');
-  //         showMoreButton.innerText = 'Скрыть';
-  //         pagination.classList.add('card-hidden');
-  //       } else {
-  //         card.classList.add('hidden');
-  //         pagination.classList.remove('card-hidden');
-  //         showMoreButton.innerText = 'Показать больше';
-  //       }
-  //     });
-  //   });
-  // }
-
-  createPageButtons();
-  showPage(currentPage);
 });
+
+function showMoreCards() {
+  const showMoreButton = document.querySelector('.btn-show__cards');
+  const toursCards = document.querySelectorAll('.tours__card');
+  const pagination = document.querySelector('.pagination');
+
+  showMoreButton.addEventListener('click', function () {
+    pagination.classList.toggle('card-hidden');
+    showMoreButton.classList.toggle('show-active');
+    showMoreButton.innerText = 'Скрыть';
+    if (window.innerWidth >= 1024 && window.innerWidth <= 2560) {
+      for (let i = 0; i < toursCards.length; i += 1) {
+        toursCards[i].classList.remove('hidden');
+        if (!showMoreButton.classList.contains('show-active')) {
+          showMoreButton.innerText = 'Показать больше';
+          for (let i = 9; i < toursCards.length; i += 1) {
+            toursCards[i].classList.add('hidden');
+          }
+        }
+      }
+    } else {
+      if (window.innerWidth <= 1023 && window.innerWidth > 590) {
+        for (let i = 0; i < toursCards.length; i += 1) {
+          toursCards[i].classList.remove('hidden');
+          if (!showMoreButton.classList.contains('show-active')) {
+            showMoreButton.innerText = 'Показать больше';
+            for (let i = 6; i < toursCards.length; i += 1) {
+              toursCards[i].classList.add('hidden');
+            }
+          }
+        }
+      } else {
+        for (let i = 0; i < toursCards.length; i += 1) {
+          toursCards[i].classList.remove('hidden');
+          if (!showMoreButton.classList.contains('show-active')) {
+            showMoreButton.innerText = 'Показать больше';
+            for (let i = 4; i < toursCards.length; i += 1) {
+              toursCards[i].classList.add('hidden');
+            }
+          }
+        }
+      }
+    }
+  });
+}
