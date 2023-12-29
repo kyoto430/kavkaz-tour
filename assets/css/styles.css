@@ -1371,6 +1371,7 @@ input[type='search']:focus {
 
 .preview__title {
   color: var(--color-white);
+  font-size: 48px;
   font-weight: 400;
   text-align: center;
 }
@@ -2552,6 +2553,16 @@ input[type='search']:focus {
   text-transform: lowercase;
 }
 
+.includes__wrapper-order {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.includes__wrapper-order .tours__card-price {
+  font-size: 36px;
+}
+
 @media (max-width: 768px) {
   .includes {
     margin-top: 100px;
@@ -2560,6 +2571,16 @@ input[type='search']:focus {
   .includes__wrapper {
     padding: 40px 30px 40px 40px;
   }
+}
+
+@media (max-width: 650px) {
+  .includes__wrapper-order {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
 }
 
 @media (min-width: 320px) and (max-width: 425px) {
